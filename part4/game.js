@@ -309,7 +309,7 @@ Game = {
     // Prefer the modern `key` value, with legacy key codes as a fallback.
     onkeydown: function(ev) {
       var keyCode = ev.keyCode || ev.which;
-      if (ev.key === 'Escape')
+      if (ev.key === 'Escape' || ev.key.toLowerCase() === 'x')
         keyCode = Game.KEY.ESC;
       if (this.game.onkeydown)
         this.game.onkeydown(keyCode);
@@ -317,7 +317,7 @@ Game = {
 
     onkeyup: function(ev) {
       var keyCode = ev.keyCode || ev.which;
-      if (ev.key === 'Escape')
+      if (ev.key === 'Escape' || ev.key.toLowerCase() === 'x')
         keyCode = Game.KEY.ESC;
       if (this.game.onkeyup)
         this.game.onkeyup(keyCode);
